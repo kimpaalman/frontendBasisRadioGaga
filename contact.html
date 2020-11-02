@@ -1,0 +1,83 @@
+<!--webbouw website RadioGaGa-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+	<meta http-equiv="Content-Type" content=text/html; charset=UTF-8">
+	<!--"rel" stelt de relatie vast (stylesheet) & "href" verwijst naar het bestand-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles.css">
+	<meta name="robots" content="all">
+	<meta name="language" content="Dutch">
+	<meta name="author" content="Kim Paalman 97074591">
+	<meta name="description" content="RadioGaGa marketing">
+	<meta name="keywords" content="RadioGaGa, muziek, playlist">
+	<meta name="copyright" content="copyright">
+	<title>RadioGaGa</title>
+</head>
+<body>
+	<!-------------------------------start navigatie------------------------------->
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="playlist.html">Playlist</a></li>
+			<li><a href="formulier.html">Formulier</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</uL>
+	</nav>
+	<!-------------------------------einde navigatie------------------------------->
+	<div id="logo"></div>
+	<!-------------------------------start hoofdcontent------------------------------->
+        <p id="contact"><!--openen nieuwe alinea-->
+            <span>Aliquam erat volutpat</span><br>
+            <em>Mauris</em> vel neque sit amet nunc gravida <!--cursief--> 
+            <strong>congue sed sit amet purus</strong>.<br> <!--vet-->
+            <mark>Quisque</mark> lacus quam, egestas ac tincidunt a, lacinia velit.<br> <!--gele markering-->
+        </p>
+        
+        <!-------------------------------start formulier------------------------------->
+        <!--<form> maakt het formulier aan. Hieraan wordt een action (mailto) en een method (wat moet het forumulier doen: post) gekoppeld-->
+        <form name="formulier"
+        action="mailto: postmaster@radiogaga.com" method="post">
+            <fieldset> <!--groepeert de formulier elementen (plaatst een fictieve lijn om de groep elementen)-->
+               <!-------------------------------start NAW-gegevens------------------------------->
+                <legend align="center">Feedback</legend> <!--beschrijving van de fieldset-->
+                <!--input type="text" >> maakt invulvenster aan | required >> verplicht in te vullen | id="naam" >> referentie van veld is naam | placeholder="Naam" >> tekst die in veld verschijnt-->
+                <input required type="text" id="naam" name="naam" placeholder="Naam"><br>
+                <input required type="email" id="email" name="email" placeholder="E-mail"><br>
+                <input required type="text" id="mobiel" name="mobiel" placeholder="Mobiel">
+                <!-------------------------------einde NAW-gegevens------------------------------->
+                <!-------------------------------start commentaarbox------------------------------->
+                <!--Textarea biedt meer ruimte, ruimte aangeven met kolommen en rijen-->
+                <textarea cols="35" rows="4" placeholder="Tik je vraag of commentaar in..."></textarea>
+                <br>
+                <!-------------------------------einde commentaarbox------------------------------->
+                <!-------------------------------einde ranking------------------------------->
+            </fieldset>
+            <!-------------------------------start verzendbutton------------------------------->
+            <!--Input type="submit" >> maakt een verzendbutton-->
+            <input type="submit" id="verzend" value="Verzend">
+            <!-------------------------------einde verzendbutton------------------------------->
+        </form>
+            <!-------------------------------einde formulier------------------------------->
+        <!-------------------------------start bladerknoppen------------------------------->
+	    <div id="pager">
+			<div id="vorige">
+				<a href="formulier.html">&lt;</a>
+			</div>
+			<div id="volgende">
+			    <a href="index.html">&gt;</a>
+			</div>
+		</div>
+        <!-------------------------------einde bladerknoppen------------------------------->
+	<!-------------------------------einde hoofdcontent------------------------------->
+	<!-------------------------------start footer------------------------------->
+	<footer>
+		<a href="top"><img src="img/twitter.png" alt="x"></a>
+		<a href="top"><img src="img/youtube.png" alt="x"></a>
+		<a href="top"><img src="img/facebook.png" alt="x"></a>
+		<p>Copyright &copy; 2020 <i>Ontworpen door: Kim Paalman </i>Alle rechten voorbehouden</p>
+	</footer>
+	<!-------------------------------einde footer------------------------------->
+</body>
+</html>
+

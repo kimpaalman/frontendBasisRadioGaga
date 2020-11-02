@@ -1,0 +1,433 @@
+/* -----------------------------start algemeen----------------------------- */
+body {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    font-family: Verdana, Arial, sans-serif;
+    color: #000;
+    font-size: 16px;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /*overflow verbergen op x-as: ivm spinner (hoeken buiten viewport*/
+}
+
+
+
+#logo {
+    margin-top: 15px;
+    padding-top: 10%;
+    background-image: url(img/logo.png); /* aan attribuut achtergrond een afbeelding toekennen */
+    background-repeat: no-repeat; /* herhaling van de afbeelding in de achtergrond */
+    background-position: center; /* positie van de achtergrond van de afbeelding */
+    grid-area: logo; /* geeft naam aan grid-area */
+    background-size: 280px;
+}
+
+
+
+main {
+    width: 100%;
+    margin: 0;
+    padding-bottom: 3%;
+}
+
+
+
+h3 {
+    margin: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+a { /* hyperlinks algemeen */
+    text-decoration: none; /* haal onderstreping hyperlinks weg */
+}
+/* -----------------------------einde algemeen----------------------------- */
+
+
+
+/* -----------------------------start navigatie----------------------------- */
+nav { /* parentcontainer voor navigatie */
+    width: 100%;
+    grid-area: nav; /* geeft naam aan grid-area */
+}
+
+
+
+nav ul { /* ul-element in de navigatie */
+    text-align: center;
+    margin: 0;
+    display: flex; /* maakt de container flexible */
+    padding-left: 0;
+}
+
+
+
+nav ul li { /* lijstitems van het navigatiemenu */
+    list-style-type: none;
+    width: 25%;
+    background: linear-gradient(#9FB3B5, #E3E9EA, #7C9799); /* vult achtergrond met kleurverloop: linear of radial */
+}
+
+
+
+nav ul li a { /* hyperlinks in navigatie */
+    font-size: 1.7rem; /* geeft fontgrootte van 1.7 in relatie tot 16px basislettergrootte van body */
+    opacity: 0.5; /* bepaalt de transparantie van een element */
+    filter: alpha(opacity=50); /* opacity voor IE8 en eerder */
+}
+
+
+
+nav ul li a:hover, nav ul li a:focus {
+    /* hover en focus zijn geen attributen maar effecten, geen spaties na dubbele punt */
+    color: firebrick;
+    background-color: yellow;
+    letter-spacing: 5px; /* voegt ruimte tussen letters toe */
+}
+/* -----------------------------einde navigatie----------------------------- */
+
+
+
+/* -----------------------------start bladerknop----------------------------- */
+#pager a {
+    font-size: 3rem;
+    font-weight: bolder;
+    text-decoration: none;
+    border-radius: 50%;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.8);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+
+#pager a:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=40); /* opacity voor IE8 */
+    font-size: 3.2rem;
+}
+
+
+
+.goback-button img{
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+
+
+
+#vorige {
+    z-index: 1;
+    margin-left: 10px;
+    position: absolute;
+    top: 45%;
+    left: 4%;
+    background-image: linear-gradient(to bottom, hsl(0, 80%, 50%), #bada55);
+    border-radius: 50%;
+    /* hsl specificeert kleurtint in graden, verzadiging in %, helderheid in % (en transparantie) (hue, saturation, lightness (en alpha)) */
+    /* linear-gradient specificeert kleurverloop */
+}
+
+
+
+#volgende {
+    z-index: 1;
+    margin-right: 10px;
+    position: absolute;
+    top: 45%;
+    right: 4%;
+    background-image: linear-gradient(to bottom, hsl(0, 80%, 50%), #bada55);
+    border-radius: 50%;
+}
+/* -----------------------------einde bladerknop----------------------------- */
+
+
+
+/* -----------------------------start stijlen indexpagina---------------------------- */
+
+/* -----------------------------start disc----------------------------- */
+#disc {
+    border-radius: 50%; /* rond hoeken van element af */
+    display: inline-block;
+    opacity: 0.8; /* geeft transparantie van element aan. Maakt alle sub-elementen ook transparant. Een opacity van 80% betekent 20% doorzichtigheid */
+    width: 300px;
+    height: 300px;
+    /* attribuut radial-gradient werkt in elke browser anders, daarom coderen met een browser-prefix */
+    background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, grey 0%, black 100%, black 95%);
+    background-image: -webkit-radial-gradient(45px 45px, circle cover, grey, black);
+    background-image: radial-gradient(45px 45px 45deg, circle cover, grey 0%, black 100%, black 95%);
+    /* animatie revolutie toepassen op disc-element */
+    animation-name: revolutie;
+    animation-duration: 3s; /* animatie duurt 3 seconden */
+    animation-iteration-count: infinite; /* oneindig aantal herhalingen */
+    animation-timing-function: linear;
+    margin-top: 5%;
+    position: relative; /* onderdeel centreren van #center child-element */
+}
+
+
+
+/* standard */
+/* animaties mbv keyframes: disc moet ronddraaien */
+/* transform geeft aan wat voor animatie je wilt coderen. Twee opties: translate (verplaats) & rotate(rotatie) */
+@keyframes revolutie {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+/* stijlen voor het midden van het disc-element */
+#center {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    position: relative;
+    display: block;
+    border: 0.5px solid #fff;
+    border-radius: 50%;
+    /* Element centreren. Parent op position relative */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* -----------------------------einde disc----------------------------- */
+
+/* -----------------------------einde stijlen indexpagina---------------------------- */
+
+
+
+/* -----------------------------start footer----------------------------- */
+footer {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    grid-area: footer;
+    margin-top: 60px; /* footer naar beneden duwen */
+}
+
+
+
+footer img {
+    margin: 0;
+    width: 4%
+}
+
+
+
+footer p {
+    margin: 0;
+    color: firebrick;
+}
+/* -----------------------------einde footer---------------------------- */
+
+
+
+/* -----------------------------start playlistpagina---------------------------- */
+.gridcontainer {
+    display: grid; /* vertelt browser dat het hier een gridindeling betreft */
+    grid-template-columns: 100px repeat(autofit, minmax(150px, 1fr)); /* repeat (autofit minmax): autofit >> maakt gridkolommen responsive min-max >> elke kolom krijgt min 150px en max 1 fr ruimte op het scherm */
+    grid-template-rows: 1fr; /* geeft per rij 1 fraction van het scherm */
+    grid-template-areas: /* roept grid-areas aan en geeft indeling per gridvlak */"nav nav nav" "albums logo logo" "albums multimedia multimedia" "footer footer footer"
+}
+
+
+
+/* -----------------------------start multimedia---------------------------- */
+#multimedia {
+    grid-area: multimedia; /* geeft naam aan grid-area */
+}
+
+
+
+video {
+    min-width: 320px;
+    margin: 28px 10% 28px 0;
+}
+/* -----------------------------einde multimedia---------------------------- */
+
+
+
+/* -----------------------------start albums---------------------------- */
+#albums {
+    grid-area: albums; /* geeft naam aan grid-area */
+    display: flex;
+    justify-content: center; /* centreert items horizontaal */
+    align-items: center;
+    margin-top: 36px;
+}
+
+
+
+#albums ul {
+    display: flex; /* maakt de container flexible */
+    flex-direction: column;
+    padding: 0;
+}
+
+
+
+#albums ul li {
+    list-style-type: none;
+}
+/* -----------------------------einde albums---------------------------- */
+
+/* -----------------------------einde playlistpagina---------------------------- */
+
+
+
+/* -----------------------------start formulierpagina---------------------------- */
+form {
+    width: 100%;
+    text-align: center;
+}
+
+
+
+legend {
+    font-size: 1.5em; /* fontsize relatief aan parent-element (rem >> fontsize relatief aan rootfontsize body) */
+    font-weight: bold;
+}
+
+
+
+fieldset {
+    text-align: center;
+    border: solid 2px #009d22;
+    width: 70%;
+    margin: auto;
+    border-radius: 2%;
+    background-image: linear-gradient(to bottom, hsl(0, 80%, 50%), #bada55);
+    /* hsl specificeert kleurtint in graden, verzadiging in %, helderheid in % (en transparantie) (hue, saturation, lightness (en alpha)) */
+    /* linear-gradient specificeert kleurverloop */
+}
+
+
+
+/* -----------------------------start input-, select en textarea---------------------------- */
+input, select, textarea {
+    border: solid 1px rgb(0, 0, 0);
+    margin: 5px;
+    padding: 5px 30px 5px 50px;
+    width: 50%;
+    text-align: center;
+    font-size: 1em; /* fontsize relatief aan parent */
+    border-radius: 5px;
+}
+
+
+
+/* focus>>zorgt er voor dat in te vullen vak extra opvalt met groene schaduw */
+input:focus, text-area:focus {
+    box-shadow: 6px 6px 10px #2eef1e;
+}
+
+
+
+select {
+    width: 35%
+}
+
+
+
+/* input-elementen >> type element staat tussen[] */
+input[type=date] {
+    width: 25%;
+}
+
+
+
+input[type=checkbox], input[type=radio] {
+    width: 4%;
+}
+
+
+
+input[type=submit] {
+    background-color: #bada55;
+    width: 43%;
+    opacity: 0.4;
+}
+
+
+
+input[type=submit]:hover {
+    opacity: 1;
+    transition: opacity 0.5% linear;
+}
+/* -----------------------------einde input-, select en textarea---------------------------- */
+
+/* -----------------------------einde formulierpagina---------------------------- */
+
+
+
+/* -----------------------------start contactpagina---------------------------- */
+#contact {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    text-align: justify;
+    line-height: 1.6em;
+}
+
+
+
+#contact span {
+    font-size: 1.3rem;
+    letter-spacing: 5px;
+    text-shadow: 2px 2px 4px #2eef1e;
+    text-transform: uppercase;
+}
+
+
+
+input[type=submit]:hover {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+/* -----------------------------einde contactpagina---------------------------- */
+
+
+
+/*  wanneer het scherm kleiner wordt dan 600px wordt dit de nieuwe grid-template */
+@media only screen and (max-width: 600px) {
+    .gridcontainer {
+        grid-template-areas: soft"nav" "logo" "albums" "multimedia" "footer"; /* roept grid-areas aan en geeft indeling per gridvlak */
+    }
+}
+
+
+
+/*  wanneer het scherm kleiner is dan 770px gebruik deze stijlen */
+@media screen and (max-width: 770px) {
+    #logo {
+        background-size: 230px;
+    }
+
+    nav ul {
+        flex-flow: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    video {
+        margin: 28px;
+    }
+}

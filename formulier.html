@@ -1,0 +1,123 @@
+<!--webbouw website RadioGaGa-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta http-equiv="Content-Type" content=text/html; charset=UTF-8">
+    <!--"rel" stelt de relatie vast (stylesheet) & "href" verwijst naar het bestand-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="robots" content="all">
+    <meta name="language" content="Dutch">
+    <meta name="author" content="Kim Paalman 97074591">
+    <meta name="description" content="RadioGaGa marketing">
+    <meta name="keywords" content="RadioGaGa, muziek, playlist">
+    <meta name="copyright" content="copyright">
+    <title>RadioGaGa</title>
+</head>
+<body>
+	<!-------------------------------start navigatie------------------------------->
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="playlist.html">Playlist</a></li>
+			<li><a href="formulier.html">Formulier</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</uL>
+	</nav>
+	<!-------------------------------einde navigatie------------------------------->
+	<div id="logo"></div>
+	<!-------------------------------start hoofdcontent------------------------------->
+	<main>
+        <!-------------------------------start formulier------------------------------->
+        <!--<form> maakt het formulier aan. Hieraan wordt een action (mailto) en een method (wat moet het forumulier doen: post) gekoppeld-->
+        <form name="formulier"
+        action="mailto: postmaster@radiogaga.com" method="post">
+            <fieldset> <!--groepeert de formulier elementen (plaatst een fictieve lijn om de groep elementen)-->
+               <!-------------------------------start NAW-gegevens------------------------------->
+                <legend align="center">Bestel gratis kaarten</legend> <!--beschrijving van de fieldset-->
+                <!--input type="text" >> maakt invulvenster aan | required >> verplicht in te vullen | id="naam" >> referentie van veld is naam | placeholder="Naam" >> tekst die in veld verschijnt-->
+                <input required type="text" id="naam" name="naam" placeholder="Naam"><br>
+                <input required type="email" id="email" name="email" placeholder="E-mail"><br>
+                <input required type="text" id="mobiel" name="mobiel" placeholder="Mobiel">
+                <input required type="text" id="woonplaats" name="woonplaats" placeholder="Woonplaats" list="steden"><!--list-attribuut element input type="" >> geeft aan dat dit een optielijst is-->
+                    <datalist id="steden"><!--lijst met keuzeopties >> gebruiker mag eigen opties intypen-->
+                        <option value="Amsterdam">
+                        <option value="Utrecht">
+                        <option value="Antwerpen">
+                        <option value="Apeldoorn">
+                        <option value="Brussel">
+                        <option value="Rotterdam">
+                    </datalist>
+                    <br>
+                <!-------------------------------einde NAW-gegevens------------------------------->
+                <!-------------------------------start concerten------------------------------->
+                <!--select-element >> keuzemenu met beperkt aantal opties >> gebruiker mag geen eigen opties intypen-->
+                <select required name="concerten" id="concerten">
+                <!--Element option >> geeft keuzemogelijkheden aan-->
+                    <option value="0">Kies een concert</option>
+                    <option value="Manu Chau">Manu Chau</option>
+                    <option value="Evanescence">Evanescence</option>
+                    <option value="Sade">Sade</option>
+                </select>
+                <br>
+                   <!-------------------------------einde concerten------------------------------->
+                <!-------------------------------start geboortedatum------------------------------->
+                <label for="datum">Geboortedatum: </label><br>
+                <!--input type="date" >> genereert een maandkalender om datum te selecteren | required >> verplicht in te vullen | id="datum" >> referentie van veld is datum-->
+                <input required type="date" name="datum" id="datum"><br>
+                <!-------------------------------einde geboortedatum------------------------------->
+                <!-------------------------------start geslacht------------------------------->
+                <label for="geslacht">Geslacht: </label><br>
+                <!--input type="radio" >> creeert een radio-button (keuzerondje). Alle keuzerondjes uit één groep krijgen dezelfde naam-->
+                Man <input type="radio" name="geslacht" value="M">
+                Vrouw <input type ="radio" name="geslacht" value="V">
+                <br>
+                <!-------------------------------einde geslacht------------------------------->
+                <!-------------------------------start commentaarbox------------------------------->
+                <!--Textarea biedt meer ruimte, ruimte aangeven met kolommen en rijen-->
+                <textarea cols="35" rows="4" placeholder="Tik je vraag of commentaar in..."></textarea>
+                <br>
+                <!-------------------------------einde commentaarbox------------------------------->
+                <!-------------------------------start abonnementen------------------------------->
+                <!--Input type="checkbox" genereert een keuzevakje dat je aan kunt vinken. Elke vakje krijgt een eigen naam-->
+                <label for="abonnementen">Gratis abonnementen</label><br>
+                Nieuwsbrief:
+                <input type="checkbox" name="nieuwsbrief" id="nieuwsbrief" value="nieuwsbrief"><br>
+                Concertagenda:
+                <input type="checkbox" name="agenda" id="agenda" value="agenda"><br>
+                <!-------------------------------einde abbonementen------------------------------->
+                <!-------------------------------start ranking------------------------------->
+                <!--Input type="range" >> een waarde geven aan dingen. Je moet een minimale en een maximale waarde meegeven-->
+                <label for="ranking">Album Ranking</label>
+                <input type="range" name="ranking" id="ranking" min="1" max="5">
+                <!-------------------------------einde ranking------------------------------->
+            </fieldset>
+            <!-------------------------------start verzendbutton------------------------------->
+            <!--Input type="submit" >> maakt een verzendbutton-->
+            <input type="submit" id="verzend" value="Verzend">
+            <!-------------------------------einde verzendbutton------------------------------->
+        </form>
+            <!-------------------------------einde formulier------------------------------->
+        <!-------------------------------start bladerknoppen------------------------------->
+	    <div id="pager">
+			<div id="vorige">
+				<a href="playlist.html">&lt;</a>
+			</div>
+			<div id="volgende">
+			    <a href="contact.html">&gt;</a>
+			</div>
+		</div>
+        <!-------------------------------einde bladerknoppen------------------------------->
+	</main>
+	<!-------------------------------einde hoofdcontent------------------------------->
+	<!-------------------------------start footer------------------------------->
+	<footer>
+		<a href="top"><img src="img/twitter.png" alt="x"></a>
+		<a href="top"><img src="img/youtube.png" alt="x"></a>
+		<a href="top"><img src="img/facebook.png" alt="x"></a>
+		<p>Copyright &copy; 2020 <i>Ontworpen door: Kim Paalman </i>Alle rechten voorbehouden</p>
+	</footer>
+	<!-------------------------------einde footer------------------------------->
+</body>
+</html>
+

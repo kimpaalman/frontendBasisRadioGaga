@@ -1,0 +1,120 @@
+<!--webbouw website RadioGaGa-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta http-equiv="Content-Type" content=text/html; charset=UTF-8">
+    <!--"rel" stelt de relatie vast (stylesheet) & "href" verwijst naar het bestand-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="robots" content="all">
+    <meta name="language" content="Dutch">
+    <meta name="author" content="Kim Paalman 97074591">
+    <meta name="description" content="RadioGaGa marketing">
+    <meta name="keywords" content="RadioGaGa, muziek, playlist">
+    <meta name="copyright" content="copyright">
+    <title>RadioGaGa</title>
+</head>
+<body>
+    <!-------------------------------start gridcontainer------------------------------->
+    <div class="gridcontainer">
+	<!-------------------------------start navigatie------------------------------->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="playlist.html">Playlist</a></li>
+                <li><a href="formulier.html">Formulier</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </uL>
+        </nav>
+        <!-------------------------------einde navigatie------------------------------->
+        <div id="logo"><!--Logo staat in css--></div> 
+        <!-------------------------------start hoofdcontent------------------------------->
+        <!-------------------------------3 albums met on-click events------------------------------->
+        <div id="albums">
+            <ul>
+                <li>
+                    <!--onclick: muisevent als er geklikt wordt op een afbeelding. Tussen aanhalingstekens staat wat er moet gebeuren bij een klik:
+                    on click: album-1 zichtbaar, album 2 en 3 niet weergeven-->
+                    <a onclick="
+                    document.getElementById('album-1').style.display='block';
+                    document.getElementById('album-2').style.display='none';
+                    document.getElementById('album-3').style.display='none';
+                    ">
+                    <img src="img/album-1.jpg">
+                    </a>
+                </li>
+                <li>
+                    <a onclick="
+                    document.getElementById('album-1').style.display='none';
+                    document.getElementById('album-2').style.display='block';
+                    document.getElementById('album-3').style.display='none';
+                    ">
+                    <img src="img/album-2.jpg"></a>
+                </li>
+                <li>
+                    <a onclick="
+                    document.getElementById('album-1').style.display='none';
+                    document.getElementById('album-2').style.display='none';
+                    document.getElementById('album-3').style.display='block';
+                    ">
+                    <img src="img/album-3.jpg"></a>
+                </li>
+            </ul>
+        </div>
+        <!-------------------------------einde albums------------------------------->
+        <div id="multimedia">
+            <!-------------------------------start video album 1------------------------------->
+            <div id="album-1" style='display: block'>
+                <!--<video> stelt attributen van het video-object in:
+                    1. attribuut poster: geeft beginbeeld van video
+                    2. width en height geven breedte en hoogte van het video-object aan-->
+                <video controls width="80%" preload poster="img/album-1.jpg">
+                    <source src="videos/album-1.wmv" type="video/wmv"><!--bron video en type video-->
+                    <source src="videos/album-1.ogv" type="video/ogg"><!--bron video en type video-->
+                    <source src="videos/album-1.mp4" type="video/mp4"><!--bron video en type video-->
+                </video>
+            </div>
+            <!-------------------------------einde video album 1------------------------------->
+            <!-------------------------------start video album 2------------------------------->
+            <div id="album-2" style='display: none'>
+                <video controls width="80%" preload poster="img/album-2.jpg">
+                    <source src="videos/album-2.wmv" type="video/wmv"><!--bron video en type video-->
+                    <source src="videos/album-2.ogv" type="video/ogg"><!--bron video en type video-->
+                    <source src="videos/album-2.mp4" type="video/mp4"><!--bron video en type video-->
+                </video>
+            </div>
+            <!-------------------------------einde video album 2------------------------------->
+            <!-------------------------------start video album 3------------------------------->
+            <div id="album-3" style='display: none'>
+                <video controls width="80%" preload poster="img/album-3.jpg">
+                    <source src="videos/album-3.wmv" type="video/wmv"><!--bron video en type video-->
+                    <source src="videos/album-3.ogv" type="video/ogg"><!--bron video en type video-->
+                    <source src="videos/album-3.mp4" type="video/mp4"><!--bron video en type video-->
+                </video>
+            </div>
+            <!-------------------------------einde video album 3------------------------------->
+        </div>
+        <!-------------------------------einde multimedia------------------------------->
+        <!-------------------------------start bladerknoppen------------------------------->
+        <div id="pager">
+            <div id="vorige">
+                <a href="index.html">&lt;</a>
+            </div>
+            <div id="volgende">
+                <a href="formulier.html">&gt;</a>
+            </div>
+        </div>
+        <!-------------------------------einde bladerknoppen------------------------------->
+        <!-------------------------------einde hoofdcontent------------------------------->
+        <!-------------------------------start footer------------------------------->
+        <footer>
+            <a href="top"><img src="img/twitter.png" alt="x"></a>
+            <a href="top"><img src="img/youtube.png" alt="x"></a>
+            <a href="top"><img src="img/facebook.png" alt="x"></a>
+            <p>Copyright &copy; 2020 <i>Ontworpen door: Kim Paalman </i>Alle rechten voorbehouden</p>
+        </footer>
+        <!-------------------------------einde footer------------------------------->
+    </div>
+    <!-------------------------------einde gridcontainer------------------------------->
+</body>
+</html>
