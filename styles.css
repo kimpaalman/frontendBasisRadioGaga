@@ -9,7 +9,7 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /*overflow verbergen op x-as: ivm spinner (hoeken buiten viewport*/
+    overflow-x: hidden; /*overflow verbergen op x-as: ivm spinner (hoeken buiten viewport)*/
 }
 
 
@@ -207,8 +207,8 @@ nav ul li a:hover, nav ul li a:focus {
 
 /* -----------------------------start footer----------------------------- */
 footer {
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    top: 90vh;
     right: 0;
     left: 0;
     text-align: center;
@@ -217,7 +217,6 @@ footer {
     padding-bottom: 10px;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     grid-area: footer;
-    margin-top: 60px; /* footer naar beneden duwen */
 }
 
 
@@ -406,7 +405,7 @@ input[type=submit]:hover {
 /*  wanneer het scherm kleiner wordt dan 600px wordt dit de nieuwe grid-template */
 @media only screen and (max-width: 600px) {
     .gridcontainer {
-        grid-template-areas: soft"nav" "logo" "albums" "multimedia" "footer"; /* roept grid-areas aan en geeft indeling per gridvlak */
+        grid-template-areas: "nav" "logo" "albums" "multimedia" "footer"; /* roept grid-areas aan en geeft indeling per gridvlak */
     }
 }
 
