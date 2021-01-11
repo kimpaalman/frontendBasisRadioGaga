@@ -13,7 +13,6 @@ body {
 }
 
 
-
 #logo {
     margin-top: 15px;
     padding-top: 10%;
@@ -25,13 +24,11 @@ body {
 }
 
 
-
 main {
     width: 100%;
     margin: 0;
     padding-bottom: 3%;
 }
-
 
 
 h3 {
@@ -40,12 +37,11 @@ h3 {
 }
 
 
-
 a { /* hyperlinks algemeen */
     text-decoration: none; /* haal onderstreping hyperlinks weg */
 }
-/* -----------------------------einde algemeen----------------------------- */
 
+/* -----------------------------einde algemeen----------------------------- */
 
 
 /* -----------------------------start navigatie----------------------------- */
@@ -53,7 +49,6 @@ nav { /* parentcontainer voor navigatie */
     width: 100%;
     grid-area: nav; /* geeft naam aan grid-area */
 }
-
 
 
 nav ul { /* ul-element in de navigatie */
@@ -64,13 +59,12 @@ nav ul { /* ul-element in de navigatie */
 }
 
 
-
 nav ul li { /* lijstitems van het navigatiemenu */
     list-style-type: none;
     width: 25%;
     background: linear-gradient(#9FB3B5, #E3E9EA, #7C9799); /* vult achtergrond met kleurverloop: linear of radial */
+    padding: 16px;
 }
-
 
 
 nav ul li a { /* hyperlinks in navigatie */
@@ -80,15 +74,14 @@ nav ul li a { /* hyperlinks in navigatie */
 }
 
 
-
 nav ul li a:hover, nav ul li a:focus {
     /* hover en focus zijn geen attributen maar effecten, geen spaties na dubbele punt */
     color: firebrick;
     background-color: yellow;
     letter-spacing: 5px; /* voegt ruimte tussen letters toe */
 }
-/* -----------------------------einde navigatie----------------------------- */
 
+/* -----------------------------einde navigatie----------------------------- */
 
 
 /* -----------------------------start bladerknop----------------------------- */
@@ -103,7 +96,6 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 
-
 #pager a:hover {
     opacity: 0.7;
     filter: alpha(opacity=40); /* opacity voor IE8 */
@@ -111,13 +103,11 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 
-
-.goback-button img{
+.goback-button img {
     height: 30px;
     width: 30px;
     padding: 5px;
 }
-
 
 
 #vorige {
@@ -133,7 +123,6 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 
-
 #volgende {
     z-index: 1;
     margin-right: 10px;
@@ -143,8 +132,8 @@ nav ul li a:hover, nav ul li a:focus {
     background-image: linear-gradient(to bottom, hsl(0, 80%, 50%), #bada55);
     border-radius: 50%;
 }
-/* -----------------------------einde bladerknop----------------------------- */
 
+/* -----------------------------einde bladerknop----------------------------- */
 
 
 /* -----------------------------start stijlen indexpagina---------------------------- */
@@ -170,7 +159,6 @@ nav ul li a:hover, nav ul li a:focus {
 }
 
 
-
 /* standard */
 /* animaties mbv keyframes: disc moet ronddraaien */
 /* transform geeft aan wat voor animatie je wilt coderen. Twee opties: translate (verplaats) & rotate(rotatie) */
@@ -182,7 +170,6 @@ nav ul li a:hover, nav ul li a:focus {
         transform: rotate(360deg);
     }
 }
-
 
 
 /* stijlen voor het midden van het disc-element */
@@ -199,16 +186,16 @@ nav ul li a:hover, nav ul li a:focus {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 /* -----------------------------einde disc----------------------------- */
 
 /* -----------------------------einde stijlen indexpagina---------------------------- */
 
 
-
 /* -----------------------------start footer----------------------------- */
 footer {
     position: absolute;
-    top: 90vh;
+    top: 95vh;
     right: 0;
     left: 0;
     text-align: center;
@@ -217,9 +204,16 @@ footer {
     padding-bottom: 10px;
     background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
     grid-area: footer;
+
+
 }
 
-
+@media screen and (max-width: 600px) {
+    footer {
+        position: relative;
+        top: 60px;
+    }
+}
 
 footer img {
     margin: 0;
@@ -227,13 +221,12 @@ footer img {
 }
 
 
-
 footer p {
     margin: 0;
     color: firebrick;
 }
-/* -----------------------------einde footer---------------------------- */
 
+/* -----------------------------einde footer---------------------------- */
 
 
 /* -----------------------------start playlistpagina---------------------------- */
@@ -241,9 +234,8 @@ footer p {
     display: grid; /* vertelt browser dat het hier een gridindeling betreft */
     grid-template-columns: 100px repeat(autofit, minmax(150px, 1fr)); /* repeat (autofit minmax): autofit >> maakt gridkolommen responsive min-max >> elke kolom krijgt min 150px en max 1 fr ruimte op het scherm */
     grid-template-rows: 1fr; /* geeft per rij 1 fraction van het scherm */
-    grid-template-areas: /* roept grid-areas aan en geeft indeling per gridvlak */"nav nav nav" "albums logo logo" "albums multimedia multimedia" "footer footer footer"
+    grid-template-areas: /* roept grid-areas aan en geeft indeling per gridvlak */ "nav nav nav" "albums logo logo" "albums multimedia multimedia" "footer footer footer"
 }
-
 
 
 /* -----------------------------start multimedia---------------------------- */
@@ -252,13 +244,12 @@ footer p {
 }
 
 
-
 video {
     min-width: 320px;
     margin: 28px 10% 28px 0;
 }
-/* -----------------------------einde multimedia---------------------------- */
 
+/* -----------------------------einde multimedia---------------------------- */
 
 
 /* -----------------------------start albums---------------------------- */
@@ -271,7 +262,6 @@ video {
 }
 
 
-
 #albums ul {
     display: flex; /* maakt de container flexible */
     flex-direction: column;
@@ -279,14 +269,13 @@ video {
 }
 
 
-
 #albums ul li {
     list-style-type: none;
 }
+
 /* -----------------------------einde albums---------------------------- */
 
 /* -----------------------------einde playlistpagina---------------------------- */
-
 
 
 /* -----------------------------start formulierpagina---------------------------- */
@@ -296,12 +285,10 @@ form {
 }
 
 
-
 legend {
     font-size: 1.5em; /* fontsize relatief aan parent-element (rem >> fontsize relatief aan rootfontsize body) */
     font-weight: bold;
 }
-
 
 
 fieldset {
@@ -316,7 +303,6 @@ fieldset {
 }
 
 
-
 /* -----------------------------start input-, select en textarea---------------------------- */
 input, select, textarea {
     border: solid 1px rgb(0, 0, 0);
@@ -329,18 +315,15 @@ input, select, textarea {
 }
 
 
-
 /* focus>>zorgt er voor dat in te vullen vak extra opvalt met groene schaduw */
 input:focus, text-area:focus {
     box-shadow: 6px 6px 10px #2eef1e;
 }
 
 
-
 select {
     width: 35%
 }
-
 
 
 /* input-elementen >> type element staat tussen[] */
@@ -349,11 +332,9 @@ input[type=date] {
 }
 
 
-
 input[type=checkbox], input[type=radio] {
     width: 4%;
 }
-
 
 
 input[type=submit] {
@@ -363,15 +344,14 @@ input[type=submit] {
 }
 
 
-
 input[type=submit]:hover {
     opacity: 1;
     transition: opacity 0.5% linear;
 }
+
 /* -----------------------------einde input-, select en textarea---------------------------- */
 
 /* -----------------------------einde formulierpagina---------------------------- */
-
 
 
 /* -----------------------------start contactpagina---------------------------- */
@@ -384,7 +364,6 @@ input[type=submit]:hover {
 }
 
 
-
 #contact span {
     font-size: 1.3rem;
     letter-spacing: 5px;
@@ -393,13 +372,12 @@ input[type=submit]:hover {
 }
 
 
-
 input[type=submit]:hover {
     opacity: 1;
     transition: opacity 0.5s linear;
 }
-/* -----------------------------einde contactpagina---------------------------- */
 
+/* -----------------------------einde contactpagina---------------------------- */
 
 
 /*  wanneer het scherm kleiner wordt dan 600px wordt dit de nieuwe grid-template */
@@ -408,7 +386,6 @@ input[type=submit]:hover {
         grid-template-areas: "nav" "logo" "albums" "multimedia" "footer"; /* roept grid-areas aan en geeft indeling per gridvlak */
     }
 }
-
 
 
 /*  wanneer het scherm kleiner is dan 770px gebruik deze stijlen */
