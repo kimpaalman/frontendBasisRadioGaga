@@ -211,7 +211,7 @@ footer {
 @media screen and (max-width: 600px) {
     footer {
         position: relative;
-        top: 60px;
+        top: 240px;
     }
 }
 
